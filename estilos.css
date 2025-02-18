@@ -758,3 +758,46 @@
         height: 150px;
     }
   }
+
+  /* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  /* Ajustes específicos para móviles */
+  header h1 {
+      font-size: 2em; /* Reducir el tamaño del título en móviles */
+  }
+
+  nav {
+      top: 80px; /* Ajustar la posición del nav en móviles */
+  }
+
+  .info-libros {
+      margin-top: 150px; /* Reducir el margen superior en móviles */
+  }
+
+  .evento {
+      grid-template-columns: 1fr; /* Mostrar una columna en móviles */
+      margin-left: 0;
+  }
+
+  .tarjeta {
+      width: 100%; /* Ajustar el ancho de las tarjetas en móviles */
+  }
+}
+
+/* Tabletas y pantallas medianas */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .evento {
+      grid-template-columns: repeat(2, 1fr); /* Mostrar 2 columnas en tabletas */
+  }
+
+  .tarjeta {
+      width: 100%; /* Ajustar el ancho de las tarjetas en tabletas */
+  }
+}
+
+/* Pantallas grandes (escritorios) */
+@media (min-width: 1025px) {
+  .evento {
+      grid-template-columns: repeat(4, 1fr); /* Mostrar 4 columnas en escritorios */
+  }
+}
