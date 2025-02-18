@@ -1,0 +1,760 @@
+  @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,400;1,600;1,700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  html {
+    overflow-y: scroll;
+  }
+
+  /* Diseño del header */
+  header {
+    background-image: url(Recursos/img/header_1.JPG);
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 20px 0;
+    z-index: 11;
+  }
+
+  header h1 {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 3.5em;
+    margin: 0;
+    color: #000000;
+  }
+
+  /* Diseño del footer */
+  footer {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  footer p{
+    font-family: 'Merienda', bold;
+    margin: 0;
+    color: #000000;
+  }
+
+  /* Estilos para la navegación*/
+  nav h3 {
+    font-family: 'Merienda', bold;
+  }
+
+  nav {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110px; /* Posicionado debajo del header fijo */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+  }
+
+  a:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    color: #fff;
+    min-height: 100vh;
+    width: 100%;
+    background: conic-gradient(at center top, rgb(124, 45, 18), rgb(254, 243, 199), rgb(124, 45, 18));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Estilos para la sección info-libros */
+  .info-libros {
+    margin-top: 195px;
+    margin-bottom: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    width: 88%;
+  }
+
+  .info-libros h2 {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .info-libros p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;
+  }
+
+  /* Animación de entrada */
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+  .info-libros, main, .evento {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Estilo para tarjeta de recomendación de libro */
+  .evento{
+    margin-top: 20px;
+    margin-left: 65px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem;
+    width: 90%;
+    left: 50%;
+    list-style: none;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .tarjeta{
+    width: 320px;
+    height: 490px;
+    transform-style: preserve-3d;
+    transition: transform .8s ease-in-out;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+    -5px -5px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+  }
+  
+  .tarjeta:hover{
+    transform: rotateY(180deg);
+  }
+
+  .frente-tarjeta,
+  .posterior-tarjeta{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+  }
+
+  .frente-tarjeta{
+    background-size: cover;
+  }
+
+  .título-tarjeta{
+    font-style: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .subtítulo-tarjeta{
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #0fbcf9;
+  }
+
+  .posterior-tarjeta{
+    background-color: #1e272e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .contenido-tarjeta{
+    text-align: center;
+    padding: 20px;
+    max-width: 300px;
+  }
+
+  .contenido-tarjeta h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .descripción-tarjeta{
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .botón-tarjeta{
+    background-color: #0fbcf9;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .botón-tarjeta:hover{
+    background-color: transparent;
+    color: #0fbcf9;
+    border: 1px solid #0fbcf9;
+  }
+
+    /* Estilos adicionales para formularios y contenedores */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: rgb(230, 214, 184);
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  /* Estilos generales para las secciones */
+  main {
+    margin-top: 175px;
+    width: 90%;
+    padding: 20px;
+  }
+
+  section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Sección de bienvenida */
+  .bienvenida {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  }
+
+  .bienvenida p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Sección de libros destacados */
+  .libros-destacados {
+    background: conic-gradient(at right top, rgb(124, 45, 18), rgb(254, 243, 199), rgb(124, 45, 18));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .libro {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .libro:hover {
+    transform: translateY(-5px);
+  }
+
+  .libro img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .libro h3 {
+    color: #ffffff;
+    margin: 10px 0;
+  }
+
+  .libro p {
+    color: #000000;
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+
+  /* Sección de autores destacados */
+  .autores-destacados {
+    background: conic-gradient(at left top, rgb(124, 45, 18), rgb(254, 243, 199), rgb(124, 45, 18));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .autor {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .autor:hover {
+    transform: scale(1.03);
+  }
+
+  .autor img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .autor h3 {
+    color: #fff;
+    margin: 10px 0;
+  }
+
+  .autor p {
+    color: #000000;
+    font-size: 0.9em;
+  }
+
+  /* Sección de reseñas */
+  .reseñas {
+    background: conic-gradient(at bottom center, rgb(124, 45, 18), rgb(254, 243, 199), rgb(124, 45, 18));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .reseña {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .reseña:hover {
+    transform: translateY(-3px);
+  }
+
+  .reseña h3 {
+    color: #fff;
+    margin: 15px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .reseña p {
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    main {
+        width: 95%;
+        padding: 10px;
+    }
+
+    section, .evento {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .libro img {
+        width: 150px;
+        height: 225px;
+    }
+
+    .autor img {
+        width: 120px;
+        height: 120px;
+    }
+  }
+
+  .noticias-container {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: conic-gradient(at center top, rgb(124, 45, 18), rgb(254, 243, 199), rgb(124, 45, 18));
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .noticias-container h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .noticias-grid {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .noticia {
+    position: absolute;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .noticia.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .noticia h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+  }
+
+  .noticia img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+
+  .noticia p {
+    color: #000000;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+
+  .noticia .fecha {
+    display: block;
+    color: #ccc;
+    font-size: 0.9em;
+    text-align: right;
+  }
+
+  .dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(to right, rgb(255, 228, 230), rgb(204, 251, 241));
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background: #fff;
+  }
+
+  /* Adicionamos estilos para los enlaces de noticias */
+  .noticia-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+  }
+
+  .noticia-link:hover {
+    transform: translateY(-5px);
+  }
+
+  .leer-mas {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .noticia-link:hover .leer-mas {
+    transform: translateX(10px);
+  }
+
+  /* nos aseguramos de que los enlaces heredan los estilos de texto */
+  .noticia a h3,
+  .noticia a p,
+  .noticia a .fecha {
+    color: #000000;
+  }
+
+  /* Establecemos los parámetros y los estilos de nuestra tercera página */
+  .contenido-principal {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .seccion-intro {
+    margin-top: 130px;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  .contenedor-multimedia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .seccion-videos, .seccion-audio {
+    background: conic-gradient(at right top, rgb(124, 45, 18), rgb(254, 243, 199), rgb(124, 45, 18));
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+  }
+
+  .lista-videos, .lista-audio {
+    list-style: none;
+    padding: 0;
+  }
+
+  .item-multimedia {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .item-multimedia:hover {
+    transform: translateY(-5px);
+  }
+
+  .item-multimedia a {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .duration {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8em;
+  }
+
+  .contenedor-reproductor {
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 2rem;
+    border-radius: 15px;
+  }
+
+  .cerrar-reproductor {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  h2 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+
+  .item-multimedia a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  .thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .play-overlay i {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .thumbnail-container:hover .thumbnail {
+    transform: scale(1.05);
+  }
+
+  .thumbnail-container:hover .play-overlay {
+    opacity: 1;
+  }
+
+  /* Ajustes responsive */
+  @media (max-width: 768px) {
+    .thumbnail-container {
+        height: 150px;
+    }
+  }

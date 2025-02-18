@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>El Universo Literario de Antares</title>
+    <!-- Ícono de la pestaña del navegador -->
+    <link rel="icon" href="Recursos/img/libreria_icono.png" type="image/png">
+    <!-- Enlace al archivo de estilos externos -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+  <body>
+  <!-- Cabecera principal -->
+  <header>
+    <h1>El Universo Literario de Antares</h1>
+  </header>
+  <!-- Espacio para el navegador -->
+  <nav id="navegación">
+    <article>
+      <ul>
+        <li><a href="index.html"><h3 class="opciones">Inicio</h3></a></li>
+        <li><a href="recomendaciones.html"><h3 class="opciones">Nuestros libros favoritos</h3></a></li>
+        <li><a href="enlaces.html"><h3 class="opciones">¿Por qué leer?</h3></a></li>
+        <li><a href="newsletter.html"><h3 class="opciones">¡Suscríbete al Newsletter!</h3></a></li>
+      </ul>
+    </article>
+  </nav>
+  <!-- Aquí está el contenido principal de lo que requiero dar a conocer al lector -->
+  <main class="contenido-principal">
+    <section class="seccion-intro">
+      <h2>¿Por qué es importante leer?</h2>
+      <p>Descubre a través de nuestro contenido audiovisual por qué la lectura es fundamental para nuestro desarrollo personal y profesional. Explora videos y audios seleccionados cuidadosamente para inspirarte a comenzar tu viaje literario.</p>
+    </section>
+
+    <div class="contenedor-multimedia">
+      <section class="seccion-videos">
+          <h2>Videos Recomendados</h2>
+          <ul class="lista-videos">
+              <li class="item-multimedia">
+                  <div class="thumbnail-container">
+                      <img src="Recursos/img/thumbnails/beneficios-lectura.jpg" alt="Beneficios de la lectura" class="thumbnail">
+                      <div class="play-overlay">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <a href="https://www.youtube.com/embed/WA_Zp8B_8ks" data-video-id="WA_Zp8B_8ks">
+                      Los beneficios de la lectura
+                      <span class="duration">12:45</span>
+                  </a>
+              </li>
+              <li class="item-multimedia">
+                  <div class="thumbnail-container">
+                      <img src="Recursos/img/thumbnails/importancia-lectura.jpg" alt="Importancia de la lectura" class="thumbnail">
+                      <div class="play-overlay">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <a href="https://www.youtube.com/embed/LcK_QqNJn6c" data-video-id="LcK_QqNJn6c">
+                      ¿Por qué leer es tan importante?
+                      <span class="duration">8:30</span>
+                  </a>
+              </li>
+              <li class="item-multimedia">
+                  <div class="thumbnail-container">
+                      <img src="Recursos/img/thumbnails/magia-libros.jpg" alt="La magia de los libros" class="thumbnail">
+                      <div class="play-overlay">
+                          <i class="fas fa-play"></i>
+                      </div>
+                  </div>
+                  <a href="https://www.youtube.com/embed/Dg5VXhpkouQ" data-video-id="Dg5VXhpkouQ">
+                      La magia de los libros
+                      <span class="duration">15:20</span>
+                  </a>
+              </li>
+          </ul>
+      </section>
+  
+      <section class="seccion-audio">
+          <h2>Podcasts y Audiolibros</h2>
+          <ul class="lista-audio">
+              <li class="item-multimedia">
+                  <div class="thumbnail-container">
+                      <img src="Recursos/img/thumbnails/podcast-lectura.jpg" alt="Podcast de lectura" class="thumbnail">
+                      <div class="play-overlay">
+                          <i class="fas fa-headphones"></i>
+                      </div>
+                  </div>
+                  <a href="https://www.ivoox.com/podcast-te-quedas-a-leer_sq_f12307608_1.html" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                      ¿Te quedas a leer? - Podcast literario
+                      <span class="plataforma">iVoox</span>
+                  </a>
+              </li>
+              <li class="item-multimedia">
+                  <div class="thumbnail-container">
+                      <img src="Recursos/img/thumbnails/podcast-lectura.jpg" alt="Podcast de literatura" class="thumbnail">
+                      <div class="play-overlay">
+                          <i class="fas fa-headphones"></i>
+                      </div>
+                  </div>
+                  <a href="https://www.ivoox.com/podcast-grandes-infelices_sq_f11492620_1.html" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                      Grandes Infelices - Literatura y más
+                      <span class="plataforma">iVoox</span>
+                  </a>
+              </li>
+          </ul>
+      </section>
+  </div>
+
+    <div class="contenedor-reproductor" id="reproductor">
+      <span class="cerrar-reproductor" onclick="cerrarReproductor()">&times;</span>
+      <iframe id="video-frame" allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>Macedonia Inc. Todos los derechos reservados. 2025</p>
+  </footer>
+
+  <script src="script_2.js"></script>
+
+  </body>
+</html>

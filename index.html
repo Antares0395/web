@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>El Universo Literario de Antares</title>
+    <!-- Ícono de la pestaña del navegador -->
+    <link rel="icon" href="Recursos/img/libreria_icono.png" type="image/png">
+    <!-- Enlace al archivo de estilos externos -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+  <body>
+    <!-- Cabecera principal -->
+    <header>
+      <h1>El Universo Literario de Antares</h1>
+    </header>
+
+    <!-- Espacio para el navegador -->
+    <nav id="navegación">
+      <article>
+        <ul>
+          <li><a href="index.html"><h3 class="opciones">Inicio</h3></a></li>
+          <li><a href="recomendaciones.html"><h3 class="opciones">Nuestros libros favoritos</h3></a></li>
+          <li><a href="enlaces.html"><h3 class="opciones">¿Por qué leer?</h3></a></li>
+          <li><a href="newsletter.html"><h3 class="opciones">¡Suscríbete al Newsletter!</h3></a></li>
+        </ul>
+      </article>
+    </nav>
+
+    <!-- Espacio para contenido -->
+    <main>
+      <!-- Sección de bienvenida -->
+      <section class="bienvenida">
+        <h2>Bienvenido a El Universo Literario de Antares</h2>
+        <p>Explora un mundo lleno de historias fascinantes, autores increíbles y recomendaciones que te inspirarán a sumergirte en la lectura.</p>
+      </section>
+
+      <section class="noticias-container">
+        <h2>Noticias Literarias</h2>
+        <div class="noticias-grid">
+            <aside class="noticia active" id="noticia1">
+                <a href="https://www.luznoticias.mx/2025-02-17/sinaloa/quien-es-fabio-morabito-ganador-del-premio-mazatlan-de-literatura-2025-/235053" class="noticia-link" target="_blank" rel="noopener noreferrer">
+                  <h3>¡Entre premios!</h3>
+                    <img src="Recursos/img/Noticias/noticia1.jpg" alt="Galardón">
+                    <p>¿Quién es Fabio Morábito? Ganador del Premio Mazatlán de Literatura 2025.</p>
+                    <span class="fecha">17 de febrero del 2025</span>
+                    <span class="leer-mas">Leer más →</span>
+                </a>
+            </aside>
+    
+            <aside class="noticia" id="noticia2">
+                <a href="https://udgtv.com/noticias/literatura-no-cura-pero-a-veces-alivia-saccomanno/255301" class="noticia-link" target="_blank" rel="noopener noreferrer">
+                  <h3>"La literatura no cura, pero a veces alivia"</h3>
+                    <img src="Recursos/img/Noticias/noticia2.jpg" alt="Premios">
+                    <p>El autor argentino Guillermo Saccomanno ha sido galardonado con el Premio Alfaguara de Novela 2025 por su obra "Arderá el viento".</p>
+                    <span class="fecha">17 de febrero del 2025</span>
+                    <span class="leer-mas">Leer más →</span>
+                </a>
+            </aside>
+    
+            <aside class="noticia" id="noticia3">
+                <a href="https://www.infobae.com/espana/cultura/2025/01/04/los-10-libros-en-espanol-mas-esperados-de-2025-lo-nuevo-de-sara-mesa-maria-oruna-rosa-montero-o-samanta-schweblin/" class="noticia-link" target="_blank" rel="noopener noreferrer">
+                  <h3>Los 10 libros en español más esperados de 2025</h3>
+                    <img src="Recursos/img/Noticias/noticia3.jpg" alt="Libros esperados">
+                    <p>Repasamos algunos de los títulos de autores españoles o latinoamericanos que serán protagonistas de la nueva temporada literaria.</p>
+                    <span class="fecha">17 de febrero del 2025</span>
+                    <span class="leer-mas">Leer más →</span>
+                </a>
+            </aside>
+        </div>
+        <div class="dots-container">
+            <span class="dot active" data-noticia="noticia1"></span>
+            <span class="dot" data-noticia="noticia2"></span>
+            <span class="dot" data-noticia="noticia3"></span>
+        </div>
+    </section>
+    
+
+      <!-- Sección de libros destacados -->
+      <section class="libros-destacados">
+        <h2>Libros Destacados</h2>
+        <div class="libro">
+          <img src="Recursos/img/libro1.jpg" alt="Cien años de soledad">
+          <h3>Cien años de soledad</h3>
+          <p>Gabriel García Márquez</p>
+          <p>Una obra maestra del realismo mágico que narra la historia de la familia Buendía en Macondo.</p>
+        </div>
+        <div class="libro">
+          <img src="Recursos/img/libro2.jpg" alt="1984">
+          <h3>1984</h3>
+          <p>George Orwell</p>
+          <p>Una distopía clásica que explora temas de vigilancia, control y libertad.</p>
+        </div>
+        <div class="libro">
+          <img src="Recursos/img/libro3.jpg" alt="El Principito">
+          <h3>El Principito</h3>
+          <p>Antoine de Saint-Exupéry</p>
+          <p>Un cuento filosófico y poético que ha conquistado a lectores de todas las edades.</p>
+        </div>
+      </section>
+
+      <!-- Sección de autores destacados -->
+      <section class="autores-destacados">
+        <h2>Autores Destacados</h2>
+        <div class="autor">
+          <img src="Recursos/img/autor1.jpg" alt="Gabriel García Márquez">
+          <h3>Gabriel García Márquez</h3>
+          <p>Premio Nobel de Literatura y maestro del realismo mágico.</p>
+        </div>
+        <div class="autor">
+          <img src="Recursos/img/autor2.jpg" alt="Jane Austen">
+          <h3>Jane Austen</h3>
+          <p>Autora clásica conocida por sus novelas de crítica social y romance.</p>
+        </div>
+        <div class="autor">
+          <img src="Recursos/img/autor3.jpg" alt="J.K. Rowling">
+          <h3>J.K. Rowling</h3>
+          <p>Creadora de la saga de Harry Potter, un fenómeno literario mundial.</p>
+        </div>
+      </section>
+
+      <!-- Sección de reseñas -->
+      <section class="reseñas">
+        <h2>Reseñas Recientes</h2>
+        <div class="reseña">
+          <h3>Reseña de "Cien años de soledad"</h3>
+          <p>Una obra que te transporta a un mundo mágico y te hace reflexionar sobre la soledad y el tiempo.</p>
+          <p><strong>Calificación:</strong> ⭐⭐⭐⭐⭐</p>
+        </div>
+        <div class="reseña">
+          <h3>Reseña de "1984"</h3>
+          <p>Una novela perturbadora pero necesaria que sigue siendo relevante en la actualidad.</p>
+          <p><strong>Calificación:</strong> ⭐⭐⭐⭐</p>
+        </div>
+        <div class="reseña">
+          <h3>Reseña de "El Principito"</h3>
+          <p>Un libro que todos deberían leer al menos una vez en la vida. Lleno de sabiduría y ternura.</p>
+          <p><strong>Calificación:</strong> ⭐⭐⭐⭐⭐</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>Macedonia Inc. Todos los derechos reservados. 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
