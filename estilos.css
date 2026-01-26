@@ -1,0 +1,43 @@
+/* Configuración básica */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+/* Contenedor de las imágenes */
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+/* Estilo de las "tarjetas" */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+.card img {
+    width: 100%; /* La imagen se ajusta al ancho de la tarjeta */
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #777;
+}
